@@ -10,8 +10,6 @@ Path to the source code https://github.com/RushX/CSV-Data-Exporter/blob/master/s
 Functions and logic
 
 
-
-//For Downloading csv
     function apptr() { 
         function downloadcsv(data,type) {
             var csv = Papa.unparse(data);
@@ -34,7 +32,6 @@ Functions and logic
 
         let csvarr = []
         let sortedcsv = []
-//Fetch throug api with 1 second time interval
         var add = setInterval(() => {
             fetch('https://random-data-api.com/api/v2/users').then((data) => { return data.json() }).then((data) => {
                 let addr = data.address.city + ", " + data.address.street_name + ", " + data.address.street_address;
@@ -54,7 +51,6 @@ Functions and logic
             document.getElementById('expcsv').onclick = ()=>{downloadcsv(csvarr,"Data")}
             document.getElementById('expsorted').onclick = () => {
                 
-                //Sorting the csv
                 sortedcsv =csvarr
                 for (Element in sortedcsv) {
 
